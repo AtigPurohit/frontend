@@ -5,7 +5,7 @@ import {onConsentChange, getConsentFor} from '@guardian/consent-management-platf
 
 export const init: () => void = () => {
   onConsentChange(state => {
-      const gaConsents = getConsentFor('google-analytics', state);
-      mediator.emit('ga:gaConsentChange', gaConsents);
+      const gaHasConsent = getConsentFor('google-analytics', state);
+      mediator.emit('ga:gaConsentChange', gaHasConsent);
   })
 };

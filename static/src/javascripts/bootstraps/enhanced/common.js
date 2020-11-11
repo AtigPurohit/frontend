@@ -122,11 +122,11 @@ const loadAnalytics = (): void => {
 };
 
 const loadGoogleAnalytics = (): void => {
-    const handleGoogleAnalytics = (gaConsents: boolean): void => {
-        if (gaConsents && !window.ga.loaded) {
+    const handleGoogleAnalytics = (gaHasConsent: boolean): void => {
+        if (gaHasConsent && !window.ga.loaded) {
             window.initialiseGa()
         } else {
-            // prevent console errors from code calling window.ga for sessions where we have not loaded the tracking script
+            // set window.ga back to a stub function when ga consents are removed so that we don't track events
             window.ga = function() {}
         }
     }

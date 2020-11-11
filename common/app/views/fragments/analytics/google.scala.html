@@ -17,7 +17,7 @@
 // (where the user has not given their consent for GA tracking)
 window.ga = function() {};
 
-(window.initialiseGa = function() {
+window.initialiseGa = function() {
     // Remove spaces from content type and convert it to lower case
     function convertContentType(contentType) {
         var result = contentType;
@@ -164,7 +164,7 @@ window.ga = function() {};
     // Mediator will be intialised if we need to use this, otherwise just use GA straight away
     guardian.app && guardian.app.mediator && guardian.app.mediator.emit('modules:ga:ready');
 
-});
+};
 </script>
 
 @*
